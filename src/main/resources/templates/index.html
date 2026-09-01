@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Sections</title>
+    <link rel="stylesheet" href="html.css" >
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#countdown">Features</a>
+        <a href="#timeline">Contact</a>
+        <a href="#event-details">EVENT DETAILS</a>
+        <a href="#entourage">ENTOURAGE</a>
+        <a href="#sponsors">SPONSORS</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#love-messages">LOVE MESSAGES</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#attire&motif">ATTIRE & MOTIF</a>
+    </nav>
+
+    <section id="home" >
+        <h1>HOME</h1>
+        <p>MWEHHEHHEHEHEHE</p>
+
+         
+    
+
+
+
+
+
+
+
+
+    </section>
+
+    <section id="countdown" >
+        <h2>COUNTDOWN</h2>
+        <p>MWAHHAHAHHAHHAA</p>
+    </section>
+
+    <section id="timeline" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+    </section>
+
+    <section id="event-details" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+    </section>
+
+    <section id="entourage" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+    </section>
+
+    <section id="sponsors" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+    </section>
+
+    <section id="gallery" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+    </section>
+
+    <section id="love-messages">
+            <h2>Leave a Love Message</h2>
+
+    <p>Send your wishes and messages to the couple.</p>
+
+    <form action="/send-love-message" method="POST">
+
+        <label for="messageName">
+            Your Name
+        </label>
+
+        <input type="text"
+               id="messageName"
+               name="messageName"
+               placeholder="Enter your name"
+               required>
+
+        <br><br>
+
+        <label for="loveMessage">
+            Your Message
+        </label>
+
+        <textarea id="loveMessage"
+                  name="loveMessage"
+                  placeholder="Write your message here..."
+                  rows="6"
+                  required></textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Send Love Message
+        </button>
+
+    </form>
+
+
+    </section>
+    
+                
+    
+
+    <section id="rsvp" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+            <title>Wedding RSVP</title>
+
+    
+</head>
+
+<body>
+
+    <h1>Wedding RSVP</h1>
+
+    <form action="/submit-form" method="POST" id="rsvpForm">
+
+        <!-- Attendance checkbox -->
+
+        <label>
+            <input type="checkbox"
+                   name="attending"
+                   value="true"
+                   id="attending">
+
+            I will attend the wedding
+        </label>
+
+        <br><br>
+
+
+        <!-- Attendee input -->
+
+        <div id="attendeeSection">
+
+            <label>Attendee Name:</label>
+
+            <div class="attendee-input">
+
+                <input type="text"
+                       id="attendeeName"
+                       placeholder="Enter attendee name">
+
+                <button type="button"
+                        onclick="addAttendee()">
+                    ADD
+                </button>
+
+            </div>
+
+
+            <!-- List will appear here -->
+
+            <div id="attendeeList"></div>
+
+        </div>
+
+
+        <br>
+
+        <button type="submit">
+            SUBMIT RSVP
+        </button>
+
+    </form>
+
+
+    <script>
+
+        // Store all attendees
+        let attendees = [];
+
+
+        // Add attendee
+        function addAttendee() {
+
+            const input = document.getElementById("attendeeName");
+
+            const name = input.value.trim();
+
+
+            // Don't allow empty names
+            if (name === "") {
+                alert("Please enter an attendee name.");
+                return;
+            }
+
+
+            // Add name to array
+            attendees.push(name);
+
+
+            // Clear input
+            input.value = "";
+
+
+            // Display list
+            displayAttendees();
+        }
+
+
+        // Display attendees
+        function displayAttendees() {
+
+            const list = document.getElementById("attendeeList");
+
+            list.innerHTML = "";
+
+
+            attendees.forEach((name, index) => {
+
+                const attendee = document.createElement("div");
+
+                attendee.className = "attendee";
+
+
+                attendee.innerHTML = `
+                    <span>
+                        ${index + 1}. ${name}
+                    </span>
+
+                    <button type="button"
+                            class="remove-button"
+                            onclick="removeAttendee(${index})">
+                        Remove
+                    </button>
+                `;
+
+
+                list.appendChild(attendee);
+
+            });
+
+        }
+
+
+        // Remove attendee
+        function removeAttendee(index) {
+
+            attendees.splice(index, 1);
+
+            displayAttendees();
+
+        }
+
+
+        // Before submitting the form
+        document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+
+            const attending = document.getElementById("attending").checked;
+
+
+            // If attending, require at least one person
+            if (attending && attendees.length === 0) {
+
+                alert("Please add at least one attendee.");
+
+                event.preventDefault();
+
+                return;
+            }
+
+
+            // Send every attendee as a form parameter
+            attendees.forEach(function(name) {
+
+                const hiddenInput = document.createElement("input");
+
+                hiddenInput.type = "hidden";
+
+                hiddenInput.name = "attendees";
+
+                hiddenInput.value = name;
+
+                this.appendChild(hiddenInput);
+
+            }, this);
+
+        });
+
+    </script>
+
+
+
+
+    </section>
+
+    <section id="attireandmotif" >
+        <h2>TIMELINE</h2>
+        <p>HIHIHIHIHIIHIHI</p>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

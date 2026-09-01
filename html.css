@@ -1,0 +1,202 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  background-color: #fcfcfc;
+  z-index: 1000;
+  color: white;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: white;
+}
+
+.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 50px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #000000e7;
+  width: 100%;       
+  height: 400px;
+  color: white;
+}
+
+#home {
+     background-image: url('images/CAT1.jpg');
+     background-size: cover;
+     background-position: absolute;
+     width: 100%;       
+     height: 1000px;
+     
+}
+
+#countdown {
+     background-image: url('images/CAT2.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+} 
+
+#timeline {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+}
+
+#eventdetails {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+}
+
+#entourage {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+}
+
+#sponsors {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+}
+
+#gallery {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+}
+
+
+#love-messages {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+     body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .success {
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #e8f5e9;
+        }
+}
+
+
+#rsvp {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+     body {
+            font-family: Arial, sans-serif;
+            max-width: auto;
+            margin: 50px auto;
+        }
+
+        .attendee-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .attendee-input input {
+            flex: 1;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        #attendeeList {
+            margin-top: 20px;
+        }
+
+        .attendee {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            background: #f2f2f2;
+        }
+
+        .remove-button {
+            background: #ff5555;
+            color: white;
+            border: none;
+        }
+}
+
+#attireandmotif {
+     background-image: url('images/CAT3.jpg');
+     background-size: cover;
+     background-position: center;
+     width: 100%;       
+     height: 1000px;
+}
+ 
